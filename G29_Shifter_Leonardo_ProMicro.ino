@@ -113,7 +113,10 @@ void loop()
   else if (gear != old_gear) {
     Joystick.setButton(old_gear - 1, LOW);
     Joystick.setButton(gear - 1, HIGH);
+
+    if (gear == 7)
+      Joystick.setButton(5, LOW);
   }
 
-  old_gear == gear;
+  old_gear = gear;
 }
