@@ -2,16 +2,15 @@
 
 Project to turn an Arduino board into a USB adapter for the Logitech G29 Driving Force Shifter.
 
-Inspired by [this project](https://github.com/armandoiglesias/g29Shifter) and [this video](https://www.youtube.com/watch?v=dLpWEu8kCec). Code rewritten to use the [UnoJoy](https://github.com/AlanChatham/UnoJoy) library and work on a non-Leonardo board.
-
-**Note:** If you are having trouble with the UnoJoy library, check out [this branch](https://github.com/JRomainG/Driving-Force-Shifter-USB-Adapter/tree/ArduinoJoystickLibrary) which uses the [ArduinoJoystickLibrary](https://github.com/MHeironimus/ArduinoJoystickLibrary) library instead as well as [this issue](https://github.com/JRomainG/Driving-Force-Shifter-USB-Adapter/issues/1)
+Inspired by [this project](https://github.com/armandoiglesias/g29Shifter) and [this video](https://www.youtube.com/watch?v=dLpWEu8kCec).
+Code rewritten and refactored to work on an Arduino Leonardo or Pro Micro since I was having problems with the reverse gear with the original script.
 
 ## Prerequisites
 
 * A [Logitech Driving Force shifter](https://www.logitechg.com/en-us/products/driving/driving-force-shifter.941-000119.html).
-* An Arduino Uno, Mega, or Leonardo.
+* An Arduino Leonardo or Pro Micro.
 * The [Arduino IDE](https://www.arduino.cc/en/Main/Software).
-* The [UnoJoy library](https://github.com/AlanChatham/UnoJoy) and its drivers.
+* The [Arduino Joystick Library] https://github.com/MHeironimus/ArduinoJoystickLibrary.git.
 
 ## Arduino setup
 
@@ -19,37 +18,6 @@ Connect the pins from the shifter's serial connector to the Arduino:
 ![wiring diagram](images/wiring_diagram.png)
 
 More details can be found in [this video by AMStudio](https://www.youtube.com/watch?v=dLpWEu8kCec). It also shows how the finished product should look like, though the code base is different.
-
-## Flashing
-
-Download the [UnoJoy](https://github.com/AlanChatham/UnoJoy) library. Copy the `UnoJoy.h` file in the same directory as `G29_Shifter.ino`, and flash `G29_Shifter.ino` to your board using the Arduino IDE.
-
-Make sure to read UnoJoy's project page, which describes the steps to install the library and to program your Arduino.
-
-Just as a helpful reminder, here are the steps required to turn your Arduino into a gamepad:
-
-### DFU mode
-
-Put your Arduino in [DFU mode](https://www.arduino.cc/en/Hacking/DFUProgramming8U2): Using a piece of wire or other small metal object,
-connect the 2 pins closest to the USB connector together. You should hear a "beep" when the board enters DFU mode.
-
-DFU stands for "Device Firmware Update". This mode is used by UnoJoy to change your Arduino's firmware, and either make it act as a regular Arduino board or as a controller.
-
-### TurnIntoAJoystick / TurnIntoAnArduino
-
-Now that your board is in DFU mode, you can update the firmware.
-
-You simply need to run (by double clicking) UnoJoy's `TurnIntoAJoystick` (`.bat` for Windows, `.sh` for Linux, and `.command` for macOS).
-
-**Note:** To reprogram your board as an Arduino instead of a joystick, simply run `TurnIntoAnArduino` instead.
-
-This should open the shell and log information about the process. If it ends with `passed`, you're all good! If you see `failed`, your board probably wasn't in DFU mode. If you're sure that it was, head over to [UnoJoy's project page](https://github.com/AlanChatham/UnoJoy) for more information or to open an issue.
-
-### Restart the Arduino
-
-Simply unplug and replug your Arduino and you should be good to go!
-
-Once your Arduino is in "Joystick mode", you can no longer reprogram it using the IDE. To turn it back into an Arduino (and be able to reprogram it), the steps are identical, but you need to run `TurnIntoAnArduino` instead of `TurnIntoAJoystick`.
 
 ## Testing
 
@@ -67,10 +35,6 @@ Try to switch into each gear and check that they are correctly recognized. The f
 If that's not the case, please checkout the "Debugging" section.
 
 ## Debugging
-
-### Shifter not recognized by the system
-
-Make sure you have correcty programmed the Arduino using UnoJoy's `TurnIntoAJoystick`. You **must** set it to DFU mode **before** running `TurnIntoAJoystick`, and you **must** unplug and replug the Arduino afterwards.
 
 ### Wrong gears detected
 
