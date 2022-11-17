@@ -2,8 +2,8 @@
 
 Project to turn an Arduino board into a USB adapter for the Logitech G29 Driving Force Shifter.
 
-Inspired by [this project](https://github.com/armandoiglesias/g29Shifter) and [this video](https://www.youtube.com/watch?v=dLpWEu8kCec).
-Code rewritten and refactored to work on an Arduino Leonardo or Pro Micro since I was having problems with the reverse gear with the original script.
+Inspired by [this project](https://github.com/armandoiglesias/g29Shifter), [this video](https://www.youtube.com/watch?v=dLpWEu8kCec) and now [this repo](https://github.com/JRomainG/Driving-Force-Shifter-USB-Adapter).
+Code rewritten and refactored to work on an Arduino Leonardo or Pro Micro since I was having problems with the reverse gear with the original script. I also like Jromain's gear detection method more.
 
 ## Prerequisites
 
