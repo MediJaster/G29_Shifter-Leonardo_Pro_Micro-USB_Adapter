@@ -10,7 +10,7 @@ Code rewritten and refactored to work on an Arduino Leonardo or Pro Micro since 
 * A [Logitech Driving Force shifter](https://www.logitechg.com/en-us/products/driving/driving-force-shifter.941-000119.html).
 * An Arduino Leonardo or Pro Micro.
 * The [Arduino IDE](https://www.arduino.cc/en/Main/Software).
-* The [Arduino Joystick Library] https://github.com/MHeironimus/ArduinoJoystickLibrary.git.
+* The [Arduino Joystick Library](https://github.com/MHeironimus/ArduinoJoystickLibrary.git).
 
 ## Arduino setup
 
